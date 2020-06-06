@@ -1,0 +1,53 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+    </style>
+
+    <style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_anim_in_right</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_anim_out_left</item>
+    </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MeBackStyle" >
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">-15dp</item>
+        <item name="android:background">@drawable/me_back_item</item>
+    </style>
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">#DDDDDD</item>
+        <item name="colorControlActivated">#DDDDDD</item>
+    </style>
+
+    <style name="SeetingStyle" >
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:background">@drawable/me_back_item</item>
+    </style>
+
+    <style name="SigninStyle" >
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:background">@drawable/me_back_item</item>
+    </style>
+
+
+</resources>

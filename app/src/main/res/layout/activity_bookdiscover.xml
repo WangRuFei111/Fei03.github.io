@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite">
+<!--    头部标题栏-->
+    <RelativeLayout
+        android:id="@+id/bookDiscove_title"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="40dp">
+        <ImageView
+            android:id="@+id/bookDiscove_title_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_friends"
+            android:layout_centerVertical="true"
+            />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/bookDiscove_title_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:tabIndicator="@color/colorBlack"
+            app:tabIndicatorHeight="1dp"
+            app:tabIndicatorFullWidth="false"
+            android:layout_marginRight="35dp"
+            app:tabMaxWidth="200dp"
+            app:tabMinWidth="83dp"
+            app:tabTextAppearance="@style/TabLayoutTextStyle"
+            android:layout_marginLeft="35dp"
+            app:tabIndicatorColor="@color/colorOrange"
+            app:tabTextColor="@color/colorGray"
+            app:tabSelectedTextColor="@color/colorOrange"
+            app:tabMode="scrollable"
+            />
+
+            <ImageView
+                android:id="@+id/bookDiscove_title_ji"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/taboo" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bookDiscove_title"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/bookDiscove_title_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    </RelativeLayout>
+</RelativeLayout>

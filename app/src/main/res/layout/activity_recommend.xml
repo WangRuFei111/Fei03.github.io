@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<!--    每日推荐的布局-->
+    <RelativeLayout
+        android:id="@+id/recommend_title"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_height="40dp">
+        <ImageView
+            android:id="@+id/recommend_title_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/boult"
+            android:layout_centerVertical="true"
+            />
+        <View
+            android:id="@+id/recommend_title_vie"
+            android:layout_width="0.5dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:background="@color/colorGray"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/recommend_title_img"
+
+            />
+        <TextView
+            android:id="@+id/recommend_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="每日推荐"
+            android:layout_toRightOf="@+id/recommend_title_vie"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorBlack"
+        />
+    </RelativeLayout>
+<!--    中间部分的viewpager3D影廊切换-->
+    <RelativeLayout
+        android:id="@+id/recommend_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
+        android:background="#EEEEEE"
+        android:gravity="center"
+        android:clipChildren="false"
+        android:layerType="software"
+        android:layout_below="@+id/recommend_title"
+        >
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/recommend_viewpager"
+            android:layout_width="280dp"
+            android:clipChildren="false"
+            android:layout_height="570dp"/>
+
+    </RelativeLayout>
+    <!--    最底部的分享精彩内容-->
+    <RelativeLayout
+        android:id="@+id/recommend_btu"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:background="#EEEEEE"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/recommend_btu_solid"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="分享更多内容"
+            android:textColor="@color/colorGray" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:clipChildren = "false"
+    android:layout_height="match_parent">
+<!--    头部标题-->
+    <RelativeLayout
+        android:id="@+id/rv_classification_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+        <ImageView
+            android:id="@+id/classifi_title_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20sp"
+            android:src="@drawable/boult"
+            android:layout_centerVertical="true"
+            />
+        <View
+            android:id="@+id/view_classifi_view"
+            android:layout_width="0.3dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/classifi_title_img"
+            android:layout_marginLeft="10dp"
+            android:background="#C1C1C1"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/tv_classifi_title"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="分类"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/view_classifi_view"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/rv_classification_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+<!--    分类左边得菜单栏-->
+    <RelativeLayout
+        android:id="@+id/classification_left_title"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrayish"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/classification_left_recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+
+<!--    分类右边得fragment切换-->
+    <FrameLayout
+        android:id="@+id/classification_right_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="70dp"
+        android:paddingTop="10dp"
+        android:clipChildren = "false"
+        android:background="#F5F5F5">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:clipChildren = "false"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            >
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:background="@drawable/shape_classification_backgr"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/yq"
+                    android:layout_width="96dp"
+                    android:layout_height="34dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="现代言情"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_below="@+id/yq"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/yq"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-6dp"
+                    android:layout_marginRight="-10dp"
+                    android:src="@drawable/hot" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:clipToPadding="false"
+                android:background="@drawable/shape_classification_backgr"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/gd"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="古代言情"
+                    android:paddingTop="5dp"
+                    android:gravity="center_vertical"
+                    android:background="#FFFFFF"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginRight="-10dp"
+                    android:src="@drawable/hot" />
+                <ImageView
+                    android:layout_below="@+id/gd"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/gd"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:clipToPadding="false"
+                android:background="@drawable/shape_classification_backgr"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/hx"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="幻想言情"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginRight="-10dp"
+                    android:src="@drawable/news" />
+                <ImageView
+                    android:layout_below="@+id/hx"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/hx"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:clipChildren = "false"
+            android:layout_marginTop="130dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal"
+            >
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:background="@drawable/shape_classification_backgr"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/xy"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="青春校园"
+                    android:paddingTop="5dp"
+                    android:gravity="center_vertical"
+                    android:background="#FFFFFF"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    />
+
+                <ImageView
+                    android:layout_below="@+id/xy"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/xy"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_classification_backgr"
+                android:clipToPadding="false"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tr"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="同人作品"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/tr"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tr" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:clipToPadding="false"
+                android:background="@drawable/shape_classification_backgr"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tl"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="推理小说"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-8dp"
+                    android:layout_marginRight="-8dp"
+                    android:src="@drawable/news" />
+                <ImageView
+                    android:layout_below="@+id/tl"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tl"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:clipChildren = "false"
+            android:layout_marginTop="260dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal"
+            >
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:background="@drawable/shape_classification_backgr"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/xyxs"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="悬疑小说"
+                    android:paddingTop="5dp"
+                    android:gravity="center_vertical"
+                    android:background="#FFFFFF"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/xyxs"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/xyxs" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:clipToPadding="false"
+                android:background="@drawable/shape_classification_backgr"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/cy"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="次元专区"
+                    android:paddingTop="5dp"
+                    android:gravity="center_vertical"
+                    android:background="#FFFFFF"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-8dp"
+                    android:layout_marginRight="-8dp"
+                    android:src="@drawable/news" />
+                <ImageView
+                    android:layout_below="@+id/cy"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/cy"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+    </RelativeLayout>
+</RelativeLayout>

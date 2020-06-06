@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2">
+    <!--    登陆页面的头部导航栏-->
+    <RelativeLayout
+        android:id="@+id/signin_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/signin_clean"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/boult" />
+
+        <TextView
+            android:id="@+id/signin_headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/signin_clean"
+            android:text="签到 | 活动"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <!--    头部图片签到部分-->
+    <LinearLayout
+        android:id="@+id/signin_title_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/signin_title"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/signin_logo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/signin_grade" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/signin_money" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--    免费领券部分-->
+    <RelativeLayout
+        android:id="@+id/signin_content_ticket"
+        style="@style/SigninStyle"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/signin_title_img">
+
+        <TextView
+            android:id="@+id/ticket_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="免费领券"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ticket_title_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="下载应用即送，多装多得" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/quan" />
+
+    </RelativeLayout>
+    <!--    爆款爽文-->
+    <RelativeLayout
+        android:id="@+id/signin_content_witing"
+        style="@style/SigninStyle"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/signin_content_ticket">
+
+        <TextView
+            android:id="@+id/content_witing_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="爆款爽文"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content_witing_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="轻松无虐主爽文合集"/>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/wtiting" />
+
+    </RelativeLayout>
+    <!--    有声福利社-->
+    <RelativeLayout
+        android:id="@+id/signin_content_voice"
+        style="@style/SigninStyle"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/signin_content_witing">
+
+        <TextView
+            android:id="@+id/content_voice_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="有声福利社"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content_voice_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="OMG~火爆好书免费听" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/sheng" />
+
+    </RelativeLayout>
+    <!--    红包广场-->
+    <RelativeLayout
+        android:id="@+id/signin_content_packet"
+        style="@style/SigninStyle"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/signin_content_voice">
+
+        <TextView
+            android:id="@+id/content_packet_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="红包广场"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content_packet_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="这里有个红包等你撩一下！" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/hb" />
+
+    </RelativeLayout>
+    <!--    漫画全免费-->
+    <RelativeLayout
+        android:id="@+id/signin_content_charge"
+        style="@style/SigninStyle"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/signin_content_packet"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/content_charge_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15sp"
+            android:text="漫画全免费"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content_charge_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:text="重磅免费全在这里~" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/mgmf" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorGray">#B3B3B3</color>
+    <color name="colorGrayBack">#F5F5F5</color>
+    <color name="colorYellow">#F7F709</color>
+    <color name="colorViolet">#DD22DD</color>
+    <color name="colorPreen">#33CC52</color>
+    <color name="colorBlue">#3333CC</color>
+    <color name="colorCanary">#F9B34B</color>
+    <color name="colorCyan">#4BF9F9</color>
+    <color name="colorBlack">#090909</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorOrange">#F79709</color>
+    <color name="colorGrayish">#FCFCFC</color>
+    <!--Zxing相关-->
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color> <!-- Android standard ICS color -->
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c099cc00</color> <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#60000000</color>
+</resources>

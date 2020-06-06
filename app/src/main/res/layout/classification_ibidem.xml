@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#F5F5F5"
+    android:layout_height="match_parent">
+<!--    分类中的听书页面-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<!--            分类中的听书页面的男生部分-->
+            <RelativeLayout
+                android:id="@+id/classification_VoiceBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp">
+                <!--    分类出版文学艺术部分头部-->
+                <RelativeLayout
+                    android:id="@+id/VoiceBook_art"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/appear_art" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="男生"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/VoiceBook_art_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/VoiceBook_art"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:clipChildren="false"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/VoiceBook_art_top_yq"
+                            android:layout_width="96dp"
+                            android:layout_height="34dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingTop="5dp"
+                            android:text="玄幻"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/VoiceBook_art_top_yq"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/yq" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="-6dp"
+                            android:layout_marginRight="-10dp"
+                            android:src="@drawable/hot" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/VoiceBook_art_top_gd"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="灵异"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/VoiceBook_art_top_gd"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/gd" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="-6dp"
+                            android:layout_marginRight="-10dp"
+                            android:src="@drawable/hot" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/VoiceBook_art_top_hx"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="悬疑"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/VoiceBook_art_top_hx"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/hx" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/VoiceBook_art_btu"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/VoiceBook_art_top"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:clipChildren="false"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/VoiceBook_art_top_xyxs"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="都市"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/VoiceBook_art_top_xyxs"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/xyxs" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="-6dp"
+                            android:layout_marginRight="-10dp"
+                            android:src="@drawable/hot" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/VoiceBook_art_top_cy"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="历史"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/VoiceBook_art_top_cy"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cy" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/VoiceBook_art_top_xx"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="仙侠"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/VoiceBook_art_top_xx"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cy" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/VoiceBook_art_btu1"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/VoiceBook_art_btu"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:clipChildren="false"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/VoiceBook_art_top_ds"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="都市"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/VoiceBook_art_top_ds"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/xyxs" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/VoiceBook_art_top_ls"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="历史"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/VoiceBook_art_top_ls"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cy" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/VoiceBook_art_top_xxs"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="仙侠"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/VoiceBook_art_top_xxs"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/cy" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/VoiceBook_art_btu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/VoiceBook_art_btu1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:clipChildren="false"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/VoiceBook_art_top_wx"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="都市"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/VoiceBook_art_top_wx"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/xyxs" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                    </RelativeLayout>
+                </LinearLayout>
+                <View
+                    android:id="@+id/VoiceBook_art_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/VoiceBook_art_btu2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:background="#CCCCCC" />
+            </RelativeLayout>
+            <!--            分类中的听书页面的女生部分-->
+            <RelativeLayout
+                android:id="@+id/classification_schoolgirl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/classification_VoiceBook"
+                android:layout_marginLeft="10dp">
+                <!--    分类出版文学艺术部分头部-->
+                <RelativeLayout
+                    android:id="@+id/schoolgirl_art"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/appear_art" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="女生"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/schoolgirl_art_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/schoolgirl_art"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:clipChildren="false"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/schoolgirl_art_top_yq"
+                            android:layout_width="96dp"
+                            android:layout_height="34dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingTop="5dp"
+                            android:text="言情"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/schoolgirl_art_top_yq"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/yq" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="-6dp"
+                            android:layout_marginRight="-10dp"
+                            android:src="@drawable/hot" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/schoolgirl_art_top_gd"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="穿越"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/schoolgirl_art_top_gd"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/gd" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="-6dp"
+                            android:layout_marginRight="-10dp"
+                            android:src="@drawable/hot" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/schoolgirl_art_top_hx"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="亲子"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/schoolgirl_art_top_hx"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/hx" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/schoolgirl_art_btu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/schoolgirl_art_top"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:clipChildren="false"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_classification_backgr"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/schoolgirl_art_top_wx"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:text="重生"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/schoolgirl_art_top_wx"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/xyxs" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                    </RelativeLayout>
+                </LinearLayout>
+                <View
+                    android:id="@+id/schoolgirl_art_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/schoolgirl_art_btu2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:background="#CCCCCC" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.read">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".controller.activity.StartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".controller.activity.SearchActivity"/>
+        <activity android:name=".controller.activity.MainActivity" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name=".controller.activity.RecommendActivity"/>
+        <activity android:name=".controller.activity.AllChannelsActivity" />
+        <activity android:name=".controller.activity.AddAttentionActivity" />
+        <activity android:name=".controller.activity.CrackDownActivity" />
+        <activity android:name=".controller.activity.LoginActivity" />
+        <activity android:name=".controller.activity.ForgetPasswordActivity" />
+        <activity android:name=".controller.activity.ClassificationActivity"/>
+        <activity android:name=".controller.activity.SeetingActivity"/>
+        <activity android:name=".controller.activity.SigninActivity"/>
+        <activity android:name=".controller.activity.MyAccountActivity"/>
+        <activity android:name=".controller.activity.MyBookListActivity"/>
+        <activity android:name=".controller.activity.NewConstructionActivity"/>
+        <activity android:name=".controller.activity.MessageCenterActivity"/>
+        <activity android:name=".controller.activity.NewPasswordsActivity"/>
+
+        <activity
+            android:name=".zxing.android.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+    </application>
+
+</manifest>

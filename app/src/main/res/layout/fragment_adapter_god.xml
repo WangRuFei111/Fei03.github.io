@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardViewGod"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardUseCompatPadding="true">
+
+    <FrameLayout
+        android:id="@+id/fragmentLayout_adapter_god"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#8EC08D"
+                android:gravity="center"
+                android:text="男神们都在聊"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:id="@+id/rl_text"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/d4" />
+                <TextView
+                    android:id="@+id/rv_text_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最强妖兽系统"
+                    android:drawableLeft="@drawable/message_oger"
+                    android:drawablePadding="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@+id/rl_text"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/colorBlack"
+                    />
+                <TextView
+                    android:layout_toRightOf="@+id/rl_text"
+                    android:layout_below="@+id/rv_text_img"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_height="wrap_content"
+                    android:text="2410书友再聊"
+                    android:textSize="10dp"
+                    android:textColor="#8EC08D"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:id="@+id/rl_text1"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/d5" />
+            <TextView
+                android:id="@+id/rv_text_img1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="天龙丹武大帝"
+                android:drawableLeft="@drawable/message_oger"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/rl_text1"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBlack"
+                />
+            <TextView
+                android:layout_toRightOf="@+id/rl_text1"
+                android:layout_below="@+id/rv_text_img1"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_height="wrap_content"
+                android:text="39.8w书友再聊"
+                android:textSize="10dp"
+                android:textColor="#8EC08D"
+                />
+
+        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:id="@+id/rl_text2"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/d6" />
+                <TextView
+                    android:id="@+id/rv_text_img2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="龙门狂婿"
+                    android:drawableLeft="@drawable/message_oger"
+                    android:drawablePadding="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@+id/rl_text2"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/colorBlack"
+                    />
+                <TextView
+                    android:layout_toRightOf="@+id/rl_text2"
+                    android:layout_below="@+id/rv_text_img2"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_height="wrap_content"
+                    android:text="115书友再聊"
+                    android:textSize="10dp"
+                    android:textColor="#8EC08D"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

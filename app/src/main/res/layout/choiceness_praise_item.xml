@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="5dp"
+    android:layout_height="160dp">
+
+    <ImageView
+        android:id="@+id/praise_item_img"
+        android:layout_width="95dp"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/b1"
+        />
+    <TextView
+        android:id="@+id/praise_item_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="女配想开了"
+        android:textSize="12sp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/praise_item_img"
+        />
+</RelativeLayout>

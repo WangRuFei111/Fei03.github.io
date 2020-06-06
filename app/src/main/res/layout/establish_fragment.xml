@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       >
+       <ImageView
+           android:id="@+id/establish_logo"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:src="@drawable/booklist_logo"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="您还没有创建书单"
+           android:layout_below="@+id/establish_logo"
+           android:layout_marginTop="10dp"
+           android:textSize="16sp"
+           android:gravity="center_horizontal"
+           />
+
+   </RelativeLayout>
+</LinearLayout>

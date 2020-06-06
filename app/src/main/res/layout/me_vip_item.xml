@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="55dp">
+    <ImageView
+        android:id="@+id/me_item_img"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/gz_logo"
+        />
+    <TextView
+        android:id="@+id/me_item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="我的VIP"
+        android:gravity="center_vertical"
+        android:layout_toRightOf="@+id/me_item_img"
+        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="15dp"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=">"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:layout_alignParentRight="true"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#EAEAEA"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>

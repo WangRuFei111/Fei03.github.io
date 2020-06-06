@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.2"
+        android:layout_toLeftOf="@+id/lineary"
+        />
+    <LinearLayout
+        android:id="@+id/lineary"
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorWhite"
+        >
+        <LinearLayout
+            android:id="@+id/popup_local"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="本机导入"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/popup_wifi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="WIFI传书"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/popup_me"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="我的书籍"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

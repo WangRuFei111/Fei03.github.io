@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/add_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        >
+        <ImageView
+            android:id="@+id/add_toolber_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/boult"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="推荐"
+            android:layout_toRightOf="@+id/add_toolber_img"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorBlack"
+            />
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_cv"
+        android:layout_width="match_parent"
+        android:layout_height="0.01dp"
+        android:layout_below="@+id/add_toolbar"
+        app:cardElevation="10dp"
+        >
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_below="@+id/add_cv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/add_recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+</RelativeLayout>
