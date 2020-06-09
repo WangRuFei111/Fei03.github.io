@@ -26,10 +26,12 @@ import com.example.read.controller.activity.LoginActivity;
 import com.example.read.controller.activity.MessageCenterActivity;
 import com.example.read.controller.activity.MyAccountActivity;
 import com.example.read.controller.activity.MyBookListActivity;
+import com.example.read.controller.activity.MyVIPActivity;
 import com.example.read.controller.activity.SeetingActivity;
 import com.example.read.controller.activity.SigninActivity;
 import com.example.read.controller.adapter.MeAdapter;
 import com.example.read.model.bean.FruitImageText;
+import com.example.read.utils.Invisible;
 import com.example.read.utils.OnItemClickListener;
 
 import java.util.ArrayList;
@@ -71,9 +73,18 @@ public class MeFragment extends Fragment implements View.OnClickListener{
         meAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+                Intent intent = null;
                 switch (position){
+                    // 我的VIP
                     case 0:
-                        Toast.makeText(getActivity(),"我的VIP",Toast.LENGTH_SHORT).show();
+                        if(Invisible.invisible){
+                            intent = new Intent(getActivity(),MyVIPActivity.class);
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(getActivity(),"您还未登陆，请您先登陆！",Toast.LENGTH_SHORT).show();
+                            intent = new Intent(getActivity(),LoginActivity.class);
+                            startActivity(intent);
+                        }
                         break;
                     case 1:
                         Toast.makeText(getActivity(),"我的卡券",Toast.LENGTH_SHORT).show();
