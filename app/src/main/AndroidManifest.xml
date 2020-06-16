@@ -39,6 +39,7 @@
         <activity android:name=".controller.activity.MyAccountActivity"/>
         <activity android:name=".controller.activity.MyBookListActivity"/>
         <activity android:name=".controller.activity.MyVIPActivity"/>
+        <activity android:name=".controller.activity.CheckInActivity"/>
         <activity android:name=".controller.activity.NewConstructionActivity"/>
         <activity android:name=".controller.activity.MessageCenterActivity"/>
         <activity android:name=".controller.activity.NewPasswordsActivity"/>

@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.read.R;
+import com.example.read.controller.activity.CheckInActivity;
 import com.example.read.controller.activity.LoginActivity;
 import com.example.read.controller.activity.MessageCenterActivity;
 import com.example.read.controller.activity.MyAccountActivity;
@@ -121,7 +122,7 @@ public class MeFragment extends Fragment implements View.OnClickListener{
                         Toast.makeText(getActivity(),"今日免费",Toast.LENGTH_SHORT).show();
                         break;
                     case 2:
-                        Intent intent = new Intent(getActivity(), SigninActivity.class);
+                        Intent intent = new Intent(getActivity(), CheckInActivity.class);
                         startActivity(intent);
                         break;
                 }
@@ -245,7 +246,6 @@ public class MeFragment extends Fragment implements View.OnClickListener{
                 break;
             // 消息中心
             case R.id.title_img_alarm:
-                Toast.makeText(getActivity(), "消息中心", Toast.LENGTH_SHORT).show();
                 intent = new Intent(getActivity(), MessageCenterActivity.class);
                 startActivity(intent);
                 break;
