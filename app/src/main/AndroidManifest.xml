@@ -43,6 +43,7 @@
         <activity android:name=".controller.activity.NewConstructionActivity"/>
         <activity android:name=".controller.activity.MessageCenterActivity"/>
         <activity android:name=".controller.activity.NewPasswordsActivity"/>
+        <activity android:name=".controller.activity.ReceivePacketActivity"/>
 
         <activity
             android:name=".zxing.android.CaptureActivity"

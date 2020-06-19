@@ -28,6 +28,7 @@ import com.example.read.controller.activity.MessageCenterActivity;
 import com.example.read.controller.activity.MyAccountActivity;
 import com.example.read.controller.activity.MyBookListActivity;
 import com.example.read.controller.activity.MyVIPActivity;
+import com.example.read.controller.activity.ReceivePacketActivity;
 import com.example.read.controller.activity.SeetingActivity;
 import com.example.read.controller.activity.SigninActivity;
 import com.example.read.controller.adapter.MeAdapter;
@@ -114,15 +115,16 @@ public class MeFragment extends Fragment implements View.OnClickListener{
         meAdapterSignin.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+                Intent intent = null;
                 switch (position){
                     case 0:
-                        Toast.makeText(getActivity(),"领锦鲤红包，手慢无",Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getActivity(), ReceivePacketActivity.class);
+                        startActivity(intent);
                         break;
                     case 1:
                         Toast.makeText(getActivity(),"今日免费",Toast.LENGTH_SHORT).show();
                         break;
-                    case 2:
-                        Intent intent = new Intent(getActivity(), CheckInActivity.class);
+                    case 2: intent = new Intent(getActivity(), CheckInActivity.class);
                         startActivity(intent);
                         break;
                 }

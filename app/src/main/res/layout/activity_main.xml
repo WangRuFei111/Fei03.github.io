@@ -192,15 +192,12 @@
                             android:layout_below="@+id/main_introduction_top"
                             android:padding="10dp">
 
-                            <TextView
-                                android:id="@+id/main_introduction_btu_text"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="50dp"
-                                android:gravity="center_vertical"
-                                android:text="她不是真的女主  站住！打假"
-                                android:textSize="14sp" />
+                            <TextSwitcher
+                                android:id="@+id/tv_notice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:textSize="5dp"/>
 
                             <Button
                                 android:layout_width="50dp"

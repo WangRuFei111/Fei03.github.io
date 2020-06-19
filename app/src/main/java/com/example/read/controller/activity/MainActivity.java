@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -23,8 +24,10 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewSwitcher;
 
 import com.example.read.R;
 import com.example.read.controller.adapter.BookBackAdapter;
@@ -57,14 +60,31 @@ public class MainActivity extends AppCompatActivity  {
     private TextView mTextView,me_name;
     private RelativeLayout mRelativeLayout;
 
+    private TextSwitcher tv_notice;
+    private String[] mAdvertisement ;
+    private final int HOME_AD_RESULT = 0;
+    private int mSwitcherCount=0;
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                // 广告
+                case HOME_AD_RESULT:
+                    tv_notice.setText(mAdvertisement[mSwitcherCount % mAdvertisement.length]);
+                    mSwitcherCount++;
+                    mHandler.sendEmptyMessageDelayed(HOME_AD_RESULT, 4000);
+                    break;
+            }
+        }
+    };
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         mRg_main = findViewById(R.id.home_radiogroup);
         mRg_main.check(R.id.home_button_bookrack);
@@ -73,7 +93,8 @@ public class MainActivity extends AppCompatActivity  {
         mScrollView = findViewById(R.id.sv);
         mMain_title_seek = findViewById(R.id.main_title_seek);
         mMain_introduction_top = findViewById(R.id.main_introduction_top);
-        mTextView = findViewById(R.id.main_introduction_btu_text);
+//        mTextView = findViewById(R.id.main_introduction_btu_text);
+        tv_notice = findViewById(R.id.tv_notice);
         mRelativeLayout = findViewById(R.id.main_title);
 
         fragmentManagerBook = getSupportFragmentManager();
@@ -147,8 +168,27 @@ public class MainActivity extends AppCompatActivity  {
         });
 
         mRelativeLayout.setBackgroundColor(Color.TRANSPARENT);
+
+
+        initView();
     }
 
+    // 上下滚动的TextView文字，她不是真的女主
+    private void initView() {
+        tv_notice.setFactory(new ViewSwitcher.ViewFactory() {
+            // 这里用来创建内部的视图，这里创建TextView，用来显示文字
+            public View makeView() {
+                TextView tv = new TextView(getApplicationContext());
+                // 设置文字的显示单位以及文字的大小
+                tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, getResources()
+                        .getDimension(R.dimen.font_size));
+                tv.setTextColor(Color.parseColor("#6F6F6F"));
+                return tv;
+            }
+        });
+        mAdvertisement = new String[] { "这不是真的女主" ,"站住，打假！" };
+        mHandler.sendEmptyMessage(HOME_AD_RESULT);
+    }
 
     //判断是否登陆状态
     private void itInvisible() {
@@ -162,6 +202,8 @@ public class MainActivity extends AppCompatActivity  {
         }
         Log.i("这是itInvisible", "itInvisible: "+ Invisible.invisible);
     }
+
+
 
 
     //往书架中的RecycleView添加数据
@@ -305,8 +347,9 @@ public class MainActivity extends AppCompatActivity  {
         MainActivity.OnClick onClick = new MainActivity.OnClick();
         mMain_title_all.setOnClickListener(onClick);
         mMain_title_seek.setOnClickListener(onClick);
+        tv_notice.setOnClickListener(onClick);
         mMain_introduction_top.setOnClickListener(onClick);
-        mTextView.setOnClickListener(onClick);
+//        mTextView.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -334,7 +377,7 @@ public class MainActivity extends AppCompatActivity  {
                     startActivity(intent);
                     break;
                 //跳转到 这不是真的女主页面
-                case R.id.main_introduction_btu_text:
+                case R.id.tv_notice:
                     intent = new Intent(MainActivity.this,CrackDownActivity.class);
                     startActivity(intent);
                     break;
