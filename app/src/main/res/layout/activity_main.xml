@@ -212,6 +212,7 @@
 
                     <!--           引言部分结束，书架部分：包括下拉刷新-->
                     <RelativeLayout
+                        android:id="@+id/refres_bookAll"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/main_introduction"

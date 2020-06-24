@@ -2,6 +2,8 @@ package com.example.read.controller.activity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -9,12 +11,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -29,6 +38,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
+import com.bifan.txtreaderlib.main.TxtConfig;
+import com.bifan.txtreaderlib.ui.HwTxtPlayActivity;
 import com.example.read.R;
 import com.example.read.controller.adapter.BookBackAdapter;
 import com.example.read.controller.fragment.BookDiscoverFragment;
@@ -38,7 +49,9 @@ import com.example.read.controller.fragment.MeFragment;
 import com.example.read.controller.popupWindow.RewritePopwindow;
 import com.example.read.model.bean.FruitImage;
 import com.example.read.utils.Invisible;
+import com.example.read.utils.OnItemClickListener;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,8 +70,12 @@ public class MainActivity extends AppCompatActivity  {
     private List<FruitImage> mFruitImageBack = new ArrayList<>();
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private ImageView mMain_title_all,mMain_title_seek;
-    private TextView mTextView,me_name;
+    private TextView me_name;
     private RelativeLayout mRelativeLayout;
+
+    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 0x01;
+    private String FilePath = "/storage/emulated/0/ColorOS/Browser/Download/死亡万花筒.txt";
+    private Boolean Permit = false;
 
     private TextSwitcher tv_notice;
     private String[] mAdvertisement ;
@@ -96,6 +113,15 @@ public class MainActivity extends AppCompatActivity  {
 //        mTextView = findViewById(R.id.main_introduction_btu_text);
         tv_notice = findViewById(R.id.tv_notice);
         mRelativeLayout = findViewById(R.id.main_title);
+
+
+        // 书架中的文件是否存在
+        if (CheckPermission()) {
+            Permit = true;
+        } else {
+
+        }
+
 
         fragmentManagerBook = getSupportFragmentManager();
         if (savedInstanceState != null) { // “内存重启”时调用
@@ -154,6 +180,32 @@ public class MainActivity extends AppCompatActivity  {
         BookBackAdapter bookBackAdapter = new BookBackAdapter(mFruitImageBack,this);
         mRecyBookrack.setNestedScrollingEnabled(false);
         mRecyBookrack.setAdapter(bookBackAdapter);
+        bookBackAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                View view = null;
+                switch (position){
+                    case 0:
+                        loadFile(view);
+                        break;
+                    case 1:
+                        loadFile(view);
+                        break;
+                    case 2:
+                        loadFile(view);
+                        break;
+                    case 3:
+                        loadFile(view);
+                        break;
+                    case 4:
+                        loadFile(view);
+                        break;
+                    case 5:
+                        loadFile(view);
+                        break;
+                }
+            }
+        });
         initBookBackImage();
         setListeners();
 
@@ -203,20 +255,36 @@ public class MainActivity extends AppCompatActivity  {
         Log.i("这是itInvisible", "itInvisible: "+ Invisible.invisible);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {//是否选择，没选择就不会继续
+            Uri uri = data.getData();//得到uri，后面就是将uri转化成file的过程。
+            String[] pros = {MediaStore.Files.FileColumns.DATA};
+            try {
+                Cursor cursor = managedQuery(uri, pros, null, null, null);
+                int actual_txt_column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                String path = cursor.getString(actual_txt_column_index);
+            } catch (Exception e) {
 
+            }
+        }
+    }
 
 
     //往书架中的RecycleView添加数据
     private void initBookBackImage(){
-        for (int i = 0; i < 5; i++) {
-            FruitImage fruitImage = new FruitImage(R.drawable.book1);
-            mFruitImageBack.add(fruitImage);
-            FruitImage fruitImage1 = new FruitImage(R.drawable.book2);
+        FruitImage fruitImage = new FruitImage(R.drawable.swwht);
+        mFruitImageBack.add(fruitImage);
+        for (int i = 0; i < 4; i++) {
+            FruitImage fruitImage1 = new FruitImage(R.drawable.book1);
             mFruitImageBack.add(fruitImage1);
-            FruitImage fruitImage2 = new FruitImage(R.drawable.book3);
+            FruitImage fruitImage2 = new FruitImage(R.drawable.book2);
             mFruitImageBack.add(fruitImage2);
-            FruitImage fruitImage3 = new FruitImage(R.drawable.book4);
+            FruitImage fruitImage3 = new FruitImage(R.drawable.book3);
             mFruitImageBack.add(fruitImage3);
+            FruitImage fruitImage4 = new FruitImage(R.drawable.book4);
+            mFruitImageBack.add(fruitImage4);
 
         }
     }
@@ -356,12 +424,13 @@ public class MainActivity extends AppCompatActivity  {
         public void onClick(View view) {
             Intent intent = null;
             switch (view.getId()) {
-                //点击图片弹出分享页面
+                //点击图片弹出分享页面,滚动条滚动到指定位置
                 case R.id.main_title_all:
+                    final RelativeLayout refres_bookAll = findViewById(R.id.refres_bookAll);
                     mScrollView.post(new Runnable() {
                         @Override
                         public void run() {
-                            mScrollView.fullScroll(ScrollView.FOCUS_UP);
+                            mScrollView.smoothScrollTo(0, refres_bookAll.getTop());;
                         }
                     });
                     mPopwindow = new RewritePopwindow(MainActivity.this, itemsOnClick);
@@ -384,6 +453,60 @@ public class MainActivity extends AppCompatActivity  {
             }
         }
     }
+
+    public void loadFile(View view) {
+        if (Permit) {
+            TxtConfig.saveIsOnVerticalPageMode(this,false);
+            if (TextUtils.isEmpty(FilePath) || !(new File(FilePath)).exists()) {
+                toast("文件不存在");
+            } else {
+                HwTxtPlayActivity.loadTxtFile(this, FilePath);
+            }
+        }
+    }
+
+
+
+    private Boolean CheckPermission() {
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+
+        if (requestCode == MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Permit = true;
+                loadFile(null);
+            } else {
+                // Permission Denied
+                Toast.makeText(MainActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+            return;
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    private Toast t;
+
+    private void toast(String msg) {
+        if (t != null) {
+            t.cancel();
+        }
+        t = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
+        t.show();
+    }
+
+
 
 
 

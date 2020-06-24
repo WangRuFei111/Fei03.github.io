@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.read.R;
 import com.example.read.model.bean.FruitImage;
+import com.example.read.utils.OnItemClickListener;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class BookBackAdapter extends RecyclerView.Adapter<BookBackAdapter.Beauty
      * 数据集合
      */
         private List<FruitImage> data;
+    private OnItemClickListener onItemClickListener;
 
     public BookBackAdapter(List<FruitImage> data, Context context) {
         this.data = data;
@@ -37,10 +39,18 @@ public class BookBackAdapter extends RecyclerView.Adapter<BookBackAdapter.Beauty
     }
 
     @Override
-    public void onBindViewHolder(BeautyViewHolder holder, int position) {
+    public void onBindViewHolder(BeautyViewHolder holder, final int position) {
         //将数据设置到item上
         FruitImage beauty = data.get(position);
         holder.beautyImage.setImageResource(beauty.getImageId());
+        if (onItemClickListener != null){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemClickListener.onItemClick(position);
+                }
+            });
+        }
     }
 
     @Override
@@ -56,5 +66,7 @@ public class BookBackAdapter extends RecyclerView.Adapter<BookBackAdapter.Beauty
             beautyImage = itemView.findViewById(R.id.bookback_img);
         }
     }
-
+    public void setOnItemClickListener(OnItemClickListener onItemClickListeners){
+        this.onItemClickListener = onItemClickListeners;
+    }
 }
